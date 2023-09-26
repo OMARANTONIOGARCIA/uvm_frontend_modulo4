@@ -19,7 +19,7 @@ const list = () => {
     console.log(loadNotes());
 }
 
-const eliminar = (title) => {
+const remove = (title) => {
     const notas = loadNotes();
     let notasTem = notas.filter(x => x.title !== title);
     if (notas.length > notasTem.length) {
@@ -48,5 +48,5 @@ const loadNotes = () => {
 module.exports = {
     add: add,
     list: list,
-    eliminar: eliminar,
+    remove: remove,
 }
