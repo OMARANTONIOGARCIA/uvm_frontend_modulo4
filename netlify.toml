@@ -1,19 +1,5 @@
 [build]
-  base = "./Practica_1"  # Ruta relativa a la carpeta raíz de tu proyecto
-  publish = "./Practica_1"  # Carpeta que deseas publicar (la raíz de tu proyecto)
-  command = "node index.js"  # Comando para iniciar tu aplicación Node.js
+  functions = "functions"
 
-[context.production]
-  command = "npm start"  # Comando de inicio para el entorno de producción
-
-[context.deploy-preview]
-  command = "node index.js"  # Comando para iniciar tu aplicación Node.js
-
-[context.branch-deploy]
-  command = "node index.js"  # Comando para iniciar tu aplicación Node.js
-
-[context.split1]
-  command = "node index.js"  # Comando para iniciar tu aplicación Node.js
-
-[context.split2]
-  command = "node index.js"  # Comando para iniciar tu aplicación Node.js
+[dev]
+  publish = "dist"

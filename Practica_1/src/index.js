@@ -1,34 +1,31 @@
 const path = require('path');
 const express = require('express');
+const weatherstack = require('./utils/weatherstack')
+const serverless = require("serverless-http");
 const hbs = require('hbs');
 const app = express();
-const weatherstack = require('./src/utils/weatherstack')
+const router = express.Router();
 
-const port = process.env.PORT || 8080
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, './public')
 const viewsPath = path.join(__dirname, './templates/views')
 const partialsPath = path.join(__dirname, './templates/partials')
 
-// Setup handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
-hbs.registerPartials(partialsPath)
-
-// Setup static directory to serve
+hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath))
 app.use(express.urlencoded({ extended: true }));
 
-app.get('', (req, res) => {
+router.get('/', (req, res) => {
     res.render('index', {
         title: 'App Web Clima',
         name: 'Antonio'
     })
 });
 
-
-app.get('/weather', (req, res) => {
+router.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
             error: 'Ingresa Ciudad!'
@@ -42,7 +39,7 @@ app.get('/weather', (req, res) => {
     })
 });
 
-app.get('*', (req, res) => {
+router.get('*', (req, res) => {
     res.render('404', {
         title: 'App Web Clima',
         name: 'Antonio',
@@ -50,6 +47,11 @@ app.get('*', (req, res) => {
     })
 });
 
+/*
+const port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log('Server is up on port ' + port)
 });
+*/
+
+app.use(`/.netlify/functions/index`, router);
