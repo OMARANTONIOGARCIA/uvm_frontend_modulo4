@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+        <link rel="icon" href="/img/weather.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <p>Ingrese la capital: </p>
+            <form>
+                <input placeholder="ciudad">
+                <button>buscar</button>
+            </form>
+        <div id="divElement"></div>
+        </div>
+        {{>footer}}
+    </body>
+    <script src="/js/app.js"></script>
+</html>

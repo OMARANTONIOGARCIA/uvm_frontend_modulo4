@@ -48,20 +48,4 @@ yargs.command({
         notas.remove(argv.title);
     }
 });
-
-
 console.log(yargs.argv);
-
-
-/*if (comando === 'add') {
-    const title = process.argv[3];
-    const body = process.argv[4];
-    notas.add(title, body);
-} else if (comando === 'list') {
-    notas.list();
-} else if (comando === 'remove') {
-    const title = process.argv[3];
-    notas.eliminar(title);
-} else {
-    console.log(chalk.red.inverse('Comando no reconocido.'));
-}*/

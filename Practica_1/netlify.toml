@@ -1,0 +1,2 @@
+command = "npm start" # Ajusta esto según tu necesidad
+publish = "public" # Directorio que deseas publicar en Netlify
