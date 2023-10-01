@@ -1,2 +1,0 @@
-command = "node index.js" # Ajusta esto según tu necesidad
-publish = "index.js" # Directorio que deseas publicar en Netlify
