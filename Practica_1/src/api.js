@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const weatherstack = require('../utils/weatherstack')
+const weatherstack = require('./utils/weatherstack')
 const serverless = require("serverless-http");
 const hbs = require('hbs');
 const app = express();
