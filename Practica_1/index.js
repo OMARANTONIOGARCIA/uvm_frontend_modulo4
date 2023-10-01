@@ -4,7 +4,7 @@ const hbs = require('hbs');
 const app = express();
 const weatherstack = require('./src/utils/weatherstack')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, './public')
