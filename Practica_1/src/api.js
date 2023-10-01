@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const weatherstack = require('./utils/weatherstack')
+const weatherstack = require('../utils/weatherstack')
 const serverless = require("serverless-http");
 const hbs = require('hbs');
 const app = express();
@@ -8,9 +8,9 @@ const router = express.Router();
 
 
 // Define paths for Express config
-const publicDirectoryPath = path.join(__dirname, './public')
-const viewsPath = path.join(__dirname, './templates/views')
-const partialsPath = path.join(__dirname, './templates/partials')
+const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
